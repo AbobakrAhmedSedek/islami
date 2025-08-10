@@ -7,6 +7,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.white,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Home Screen'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Text(
+            'Welcome to the Home Screen',
+            style: TextStyle(fontSize: 24, color: Colors.black),
+          ),
+        ),
+      ),
+    );
   }
 }
