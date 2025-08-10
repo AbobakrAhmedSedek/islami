@@ -11,5 +11,11 @@ class AssetsRes {
   static const String ANDROID12SPLASH = 'assets/images/android12splash.png';
   static const String BRANDING = 'assets/images/branding.png';
   static const String BRANDING12SPLASH = 'assets/images/branding12splash.png';
+  static const String ISLAMI = 'assets/images/islami.png';
   static const String LOGO = 'assets/images/logo.png';
+  static const String ONBOARDING1 = 'assets/images/onboarding1.png';
+  static const String ONBOARDING2 = 'assets/images/onboarding2.png';
+  static const String ONBOARDING3 = 'assets/images/onboarding3.png';
+  static const String ONBOARDING4 = 'assets/images/onboarding4.png';
+  static const String ONBOARDING5 = 'assets/images/onboarding5.png';
 }
