@@ -1,10 +1,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:islami/model/onboarding_model.dart';
-import 'package:islami/style/colorManager.dart';
 import 'package:islami/ui/onboarding_screen/widgets/ondoarding_item.dart';
 
-import '../../style/res/assets_res.dart';
+import '../../utils/appAssets.dart';
+import '../../utils/appColor.dart';
 import '../home/home_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -28,7 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Image.asset(AssetsRes.ISLAMI, width: width * 0.8),
+            Image.asset(AppImages.islami, width: width * 0.8),
             Expanded(
               child: PageView.builder(
                 controller: pageController,
@@ -65,7 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           "back",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: ColorManager.primary,
+                            color: AppColor.primary,
                           ),
                         ),
                       ),
@@ -73,7 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     dotsCount: OnboardingModel.getOnboardingData.length,
                     position: currentPage.toDouble(),
                     decorator: DotsDecorator(
-                      activeColor: ColorManager.primary,
+                      activeColor: AppColor.primary,
                       size: const Size.square(9.0),
                       activeSize: const Size(18.0, 9.0),
                       activeShape: RoundedRectangleBorder(
@@ -107,7 +107,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           : "next",
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: ColorManager.primary,
+                        color: AppColor.primary,
                       ),
                     ),
                   ),
@@ -120,3 +120,4 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 }
+

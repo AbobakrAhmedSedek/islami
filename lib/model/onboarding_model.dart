@@ -1,4 +1,4 @@
-import '../style/res/assets_res.dart';
+import '../utils/appAssets.dart';
 
 class OnboardingModel {
   final String imagePath;
@@ -14,26 +14,26 @@ class OnboardingModel {
 
   static List<OnboardingModel> getOnboardingData = [
     OnboardingModel(
-      imagePath: AssetsRes.ONBOARDING1,
+      imagePath: AppImages.onboarding1,
       title: 'Welcome to Islami',
     ),
     OnboardingModel(
-      imagePath: AssetsRes.ONBOARDING2,
+      imagePath: AppImages.onboarding2,
       title: 'Daily Prayers',
       description: 'Stay connected with your daily prayers and rituals.',
     ),
     OnboardingModel(
-      imagePath: AssetsRes.ONBOARDING3,
+      imagePath: AppImages.onboarding3,
       title: 'Quranic Verses',
       description: 'Explore the wisdom of the Quran at your fingertips.',
     ),
     OnboardingModel(
-      imagePath: AssetsRes.ONBOARDING4,
+      imagePath: AppImages.onboarding4,
       title: 'Islamic Calendar',
       description: 'Keep track of important Islamic dates and events.',
     ),
     OnboardingModel(
-      imagePath: AssetsRes.ONBOARDING5,
+      imagePath: AppImages.onboarding5,
       title: 'Community & Support',
       description:
           'Join a community of like-minded individuals for support and growth.',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami/style/colorManager.dart';
 
 import '../../../model/onboarding_model.dart';
+import '../../../utils/appColor.dart';
 
 class OndoardingItem extends StatelessWidget {
   final OnboardingModel onboardingModel;
@@ -18,7 +18,7 @@ class OndoardingItem extends StatelessWidget {
           onboardingModel.title,
           style: Theme.of(
             context,
-          ).textTheme.headlineLarge?.copyWith(color: ColorManager.primary),
+          ).textTheme.headlineLarge?.copyWith(color: AppColor.primary),
           // textAlign: TextAlign.center,
         ),
         onboardingModel.description == null
@@ -27,7 +27,7 @@ class OndoardingItem extends StatelessWidget {
               onboardingModel.description!,
               style: Theme.of(
                 context,
-              ).textTheme.bodyLarge?.copyWith(color: ColorManager.primary),
+              ).textTheme.bodyLarge?.copyWith(color: AppColor.primary),
               textAlign: TextAlign.center,
             ),
         const SizedBox(height: 16),
