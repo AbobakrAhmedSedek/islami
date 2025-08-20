@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/ui/home/home_screen.dart';
+import 'package:islami/ui/home/tabs/quran/Display_sura_as_connected_verses/sura_details_connected_verses_screen.dart';
 import 'package:islami/ui/onboarding_screen/onboarding_screen.dart';
 import 'package:islami/utils/appTheme.dart';
 
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
+        SuraDetailsConnectedVersesScreen.routeName:
+            (context) => SuraDetailsConnectedVersesScreen(),
+        // SuraDetailsVersePerLineScreen.routeName: (context) => SuraDetailsVersePerLineScreen(),
         '/': (context) => const OnboardingScreen(),
       },
       darkTheme: AppTheme.darkTheme,
