@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class QuranTab extends StatelessWidget {
-  const QuranTab({Key? key}) : super(key: key);
+class HadethTab extends StatelessWidget {
+  const HadethTab({super.key});
 
   @override
   Widget build(BuildContext context) {
