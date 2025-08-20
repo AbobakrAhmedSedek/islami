@@ -8,7 +8,7 @@ import '../../../../../utils/appColor.dart';
 import '../../../../../utils/app_styles.dart';
 
 class SuraDetailsVersePerLineScreen extends StatefulWidget {
-  static const String routeName = '/suraDetails';
+  static const String routeName = '/SuraDetailsVersePerLineScreen';
 
   SuraDetailsVersePerLineScreen({Key? key}) : super(key: key);
 

@@ -4,11 +4,16 @@ import 'package:islami/ui/home/tabs/quran/sure_list_witget.dart';
 import '../../../../utils/appAssets.dart';
 import '../../../../utils/appColor.dart';
 import '../../../../utils/app_styles.dart';
-import 'Display_sura_as_connected_verses/sura_details_connected_verses_screen.dart';
+import 'Display_sura_each_verse_per_line/sura_details_verse_per_line_screen.dart';
 
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   QuranTab({super.key});
 
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
   List<int> filterIndicesList = List.generate(114, (index) => index,);
 
   @override
@@ -27,6 +32,10 @@ class QuranTab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextField(
+            // onChanged: (value) {
+            //   filterListByValue( value );
+            // },
+            style: AppStyles.bold16White,
             cursorColor: AppColor.primary,
             decoration: InputDecoration(
               hintText: 'Sura Name',
@@ -103,10 +112,10 @@ class QuranTab extends StatelessWidget {
                 return InkWell(
                     onTap: () {
                       Navigator.of(context).pushNamed(
-                          SuraDetailsConnectedVersesScreen.routeName,
-                          arguments: index);
+                          SuraDetailsVersePerLineScreen.routeName,
+                          arguments: filterIndicesList[index]);
                     },
-                    child: SuraListWitget(index: index));
+                    child: SuraListWitget(index: filterIndicesList[index]));
               },
               itemCount:
               filterIndicesList
@@ -117,4 +126,19 @@ class QuranTab extends StatelessWidget {
       ),
     );
   }
+
+// void filterListByValue(  value ) {
+//   List<int> filterList = [];
+//   for (int i = 0; i < QuranResources.arabicQuranList.length; i++) {
+//     if (QuranResources.arabicQuranList[i].contains(value)) {
+//       filterList.add(i);
+//     }
+//     else if (QuranResources.englishQuranSuraList[i].toLowerCase().contains(value.toLowerCase())) {
+//       filterList.add(i);
+//     }
+//     filterIndicesList = filterList;
+//     setState(() {});
+//
+//   }
+// }
 }
