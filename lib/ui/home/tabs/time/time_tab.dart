@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TimeTab extends StatelessWidget {
-  const TimeTab({Key? key}) : super(key: key);
+  const TimeTab({super.key});
 
   @override
   Widget build(BuildContext context) {
