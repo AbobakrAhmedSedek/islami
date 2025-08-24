@@ -5,8 +5,7 @@ import 'package:islami/utils/app_styles.dart';
 class suraContentConnectedVerses extends StatelessWidget {
   String suraContent;
 
-  suraContentConnectedVerses({Key? key, required this.suraContent})
-    : super(key: key);
+  suraContentConnectedVerses({super.key, required this.suraContent});
 
   @override
   Widget build(BuildContext context) {

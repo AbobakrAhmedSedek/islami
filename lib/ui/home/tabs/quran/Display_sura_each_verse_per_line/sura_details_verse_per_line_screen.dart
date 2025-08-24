@@ -3,14 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:islami/ui/home/tabs/quran/Display_sura_each_verse_per_line/sura_content_verse_per_line.dart';
 import 'package:islami/ui/home/tabs/quran/quran_resoures.dart';
 import 'package:islami/utils/appAssets.dart';
+import 'package:provider/provider.dart';
 
+import '../../../../../providers/most_recent_provider.dart';
 import '../../../../../utils/appColor.dart';
 import '../../../../../utils/app_styles.dart';
 
 class SuraDetailsVersePerLineScreen extends StatefulWidget {
   static const String routeName = '/SuraDetailsVersePerLineScreen';
 
-  SuraDetailsVersePerLineScreen({Key? key}) : super(key: key);
+  const SuraDetailsVersePerLineScreen({super.key});
 
   @override
   State<SuraDetailsVersePerLineScreen> createState() =>
@@ -19,12 +21,14 @@ class SuraDetailsVersePerLineScreen extends StatefulWidget {
 
 class _SuraDetailsVersePerLineScreenState
     extends State<SuraDetailsVersePerLineScreen> {
+  late MostRecentListProvider provider;
   List<String> verses = [];
 
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
+    provider = Provider.of<MostRecentListProvider>(context);
     var args = ModalRoute.of(context)!.settings.arguments as int;
     if (verses.isEmpty) {
       loadSuraFilesEachVerseInALine(args);
@@ -43,7 +47,7 @@ class _SuraDetailsVersePerLineScreenState
                 Image.asset(
                   AppImages.cornerStart,
                   color: AppColor.primary,
-                  height: height * 0.2,
+                  height: height * 0.1,
                   width: width * 0.2,
                 ),
                 Text(
@@ -56,7 +60,7 @@ class _SuraDetailsVersePerLineScreenState
                 Image.asset(
                   AppImages.cornerEnd,
                   color: AppColor.primary,
-                  height: height * 0.2,
+                  height: height * 0.1,
                   width: width * 0.2,
                 ),
               ],
@@ -95,6 +99,11 @@ class _SuraDetailsVersePerLineScreenState
         ),
       ),
     );
+  }
+
+  dispose() {
+    super.dispose();
+    provider.refreshMostRecentIndicesList();
   }
 
   void loadSuraFilesEachVerseInALine(int args) async {
