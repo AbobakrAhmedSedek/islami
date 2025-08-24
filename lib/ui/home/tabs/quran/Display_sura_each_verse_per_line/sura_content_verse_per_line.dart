@@ -8,10 +8,10 @@ class SuraContentVersePerLine extends StatelessWidget {
   int index;
 
   SuraContentVersePerLine({
-    Key? key,
+    super.key,
     required this.suraContent,
     required this.index,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
