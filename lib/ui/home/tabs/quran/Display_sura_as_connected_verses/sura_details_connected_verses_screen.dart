@@ -10,7 +10,7 @@ import '../../../../../utils/app_styles.dart';
 class SuraDetailsConnectedVersesScreen extends StatefulWidget {
   static const String routeName = '/SuraDetailsConnectedVersesScreen';
 
-  SuraDetailsConnectedVersesScreen({Key? key}) : super(key: key);
+  const SuraDetailsConnectedVersesScreen({super.key});
 
   @override
   State<SuraDetailsConnectedVersesScreen> createState() =>
