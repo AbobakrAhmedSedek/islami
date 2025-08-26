@@ -8,4 +8,5 @@ class AssetsRes {
 
   static const String PROJECT_NAME = 'islami';
   static const String PROJECT_VERSION = '1.0.0+1';
+  static const String HADITH_CARD = 'assets/images/hadith_card.png';
 }

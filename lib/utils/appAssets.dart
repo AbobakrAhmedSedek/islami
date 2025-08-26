@@ -8,6 +8,7 @@ class AppImages {
   static const String placeholder = 'assets/images/placeholder.png';
   static const String imgBottomDecoration =
       'assets/images/img_bottom_decoration.png';
+  static const String hadithCard = "assets/images/hadith_card.png";
 
   static const String onboarding1 = 'assets/images/onboarding1.png';
   static const String onboarding2 = 'assets/images/onboarding2.png';
