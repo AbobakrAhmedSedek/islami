@@ -5,6 +5,7 @@ import 'package:islami/ui/onboarding_screen/widgets/ondoarding_item.dart';
 
 import '../../utils/appAssets.dart';
 import '../../utils/appColor.dart';
+import '../../utils/shared_prefs_utils.dart';
 import '../home/home_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -86,6 +87,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onPressed: () {
                       if (currentPage ==
                           OnboardingModel.getOnboardingData.length - 1) {
+                        PrefsService.setBool("finishedOnboarding", true);
                         Navigator.pushReplacementNamed(
                           context,
                           HomeScreen.routeName,
