@@ -5,12 +5,18 @@ import 'package:islami/ui/home/tabs/quran/Display_sura_as_connected_verses/sura_
 import 'package:islami/ui/home/tabs/quran/Display_sura_each_verse_per_line/sura_details_verse_per_line_screen.dart';
 import 'package:islami/ui/onboarding_screen/onboarding_screen.dart';
 import 'package:islami/utils/appTheme.dart';
+import 'package:islami/utils/shared_prefs_utils.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  runApp(ChangeNotifierProvider(
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await PrefsService.init();
+  runApp(
+    ChangeNotifierProvider(
       create: (BuildContext context) => MostRecentListProvider(),
-      child: MyApp()));
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +27,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute:
+          PrefsService.getBool("finishedOnboarding")
+              ? HomeScreen.routeName
+              : '/',
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         SuraDetailsConnectedVersesScreen.routeName:
