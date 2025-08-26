@@ -6,9 +6,10 @@ class AppImages {
   static const String background = 'assets/images/quran_bg.png';
   static const String splashScreen = 'assets/images/splash_screen.png';
   static const String placeholder = 'assets/images/placeholder.png';
-  static const String imgBottomDecoration =
-      'assets/images/img_bottom_decoration.png';
+  static const String imgBottomDecoration = 'assets/images/img_bottom_decoration.png';
   static const String hadithCard = "assets/images/hadith_card.png";
+  static const String sebhaBody = 'assets/images/sebha_body.png';
+  static const String sebhaHead = 'assets/images/sebha_head.png';
 
   static const String onboarding1 = 'assets/images/onboarding1.png';
   static const String onboarding2 = 'assets/images/onboarding2.png';

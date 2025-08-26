@@ -70,6 +70,8 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/images/hadith_card.png
+    - assets/images/sebha_body.png
+    - assets/images/sebha_head.png
 
 
 
