@@ -96,7 +96,7 @@ class _SebhaTabState extends State<SebhaTab> {
       angle += .5;
       counter++;
       angle += 0.5;
-      if (counter == 34) {
+      if (counter == 33) {
         counter = 0;
         tasbehIndex++;
         if (tasbehIndex == tasbeh.length) {

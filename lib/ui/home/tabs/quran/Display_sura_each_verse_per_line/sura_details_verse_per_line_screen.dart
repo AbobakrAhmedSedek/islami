@@ -23,18 +23,20 @@ class _SuraDetailsVersePerLineScreenState
     extends State<SuraDetailsVersePerLineScreen> {
   late MostRecentListProvider provider;
   List<String> verses = [];
+  int? selectedIndex; // لتتبع العنصر المحدد
 
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     provider = Provider.of<MostRecentListProvider>(context);
-    var args = ModalRoute.of(context)!.settings.arguments as int;
+    var index = ModalRoute.of(context)!.settings.arguments as int;
+    // int index = widget.index;
     if (verses.isEmpty) {
-      loadSuraFilesEachVerseInALine(args);
+      loadSuraFilesEachVerseInALine(index);
     }
     return Scaffold(
-      appBar: AppBar(title: Text(QuranResources.englishQuranSuraList[args])),
+      appBar: AppBar(title: Text(QuranResources.englishQuranSuraList[index])),
       body: Container(
         color: AppColor.bgIcon,
         padding: EdgeInsets.symmetric(horizontal: width * .04),
@@ -51,7 +53,7 @@ class _SuraDetailsVersePerLineScreenState
                   width: width * 0.2,
                 ),
                 Text(
-                  QuranResources.arabicQuranList[args],
+                  QuranResources.arabicQuranList[index],
                   style: AppStyles.bold16White.copyWith(
                     color: AppColor.primary,
                     fontSize: height * 0.03,
@@ -79,14 +81,15 @@ class _SuraDetailsVersePerLineScreenState
                           return SuraContentVersePerLine(
                             suraContent: verses[index],
                             index: index,
+                            isSelected:
+                                selectedIndex == index, // ✅ نحدد الآية المختارة
+                            onSelect: () {
+                              setState(() {
+                                selectedIndex =
+                                    index; // ✅ نخزن رقم الآية الجديدة
+                              });
+                            },
                           );
-                          // Text(
-                          //   verses[args],
-                          //   style: AppStyles.bold14Black.copyWith(
-                          //     color: AppColor.primary,
-                          //     fontSize: height * 0.02,
-                          //   ),
-                          // );
                         },
                         itemCount: verses.length,
                         separatorBuilder: (BuildContext context, int index) {
