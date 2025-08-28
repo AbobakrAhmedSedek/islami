@@ -38,7 +38,6 @@ class _QuranTabState extends State<QuranTab> {
       radius: const Radius.circular(10),
       thickness: 6,
       interactive: true,
-
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,

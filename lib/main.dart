@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         SuraDetailsConnectedVersesScreen.routeName:
             (context) => SuraDetailsConnectedVersesScreen(),
         SuraDetailsVersePerLineScreen.routeName:
-            (context) => SuraDetailsVersePerLineScreen(),
+            (context) => const SuraDetailsVersePerLineScreen(),
         '/': (context) => const OnboardingScreen(),
       },
       darkTheme: AppTheme.darkTheme,
@@ -44,3 +44,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+// SuraDetailsVersePerLineScreen.routeName:
+// (context) { final index = ModalRoute.of(context)!.settings.arguments as int;
+// return SuraDetailsVersePerLineScreen(index: index);},
